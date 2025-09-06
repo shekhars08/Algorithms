@@ -19,6 +19,11 @@ public class MazeHurdlePath {
     static int[] cdir = {0, -1, 0, 1};
 
     public static int solveMinPath(int[][] mat, int i, int j, int dr, int dc){
+
+        if(i == dr && j == dc){
+            return 0;
+        }
+
         mat[i][j] = -1; //mark
         int res = Integer.MAX_VALUE;
         for(int dir = 0; dir < 4; dir++){
